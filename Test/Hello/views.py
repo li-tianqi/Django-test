@@ -6,3 +6,6 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse(u'Hello World')  # u'string' means unicode
+
+def home(request):
+    return render(request, "home.html")

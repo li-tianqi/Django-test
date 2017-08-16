@@ -13,7 +13,10 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^index/', Hello_views.index),
+    url(r'^index/', calc_views.index2),
+    url(r'^plus/$', calc_views.plus, name='plus'),
     url(r'^add/', calc_views.add, name='add'),
     url(r'^add2/(\d+)/(\d+)/$', calc_views.add2, name='add2'),
+    url(r'^home/', Hello_views.home, name='home'),
+    url(r'^change_csv/', calc_views.change_csv, name='change_csv')
 ]

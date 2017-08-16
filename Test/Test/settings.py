@@ -22,7 +22,7 @@ SECRET_KEY = '2sio7k5*^_0g^38)^!!61v-65b6jzjjsnyo!@y4i&jmn^*e4v1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+#TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Hello',
+    'calc_test'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,6 +50,24 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'Test.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+			'debug': DEBUG
+        },
+		#'DEBUG': True,
+    },
+]
 
 WSGI_APPLICATION = 'Test.wsgi.application'
 
